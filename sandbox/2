@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+for user in /home/slavus/*
+do
+if [ -f $user ]
+then
+echo "это файл"
+elif [ -d $user ]
+then
+echo "это диреткория"
+fi
+done

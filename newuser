@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#проверят или создает user
+read -p 'name -'  user
+if grep $user /etc/passwd
+then
+echo "hi, good!"
+elif useradd $user -m
+then
+echo "$user:12345678" | chpasswd
+grep $user /etc/passwd
+
+fi

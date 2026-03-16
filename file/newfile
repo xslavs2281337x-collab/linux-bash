@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+read -p "name file -" file
+if touch ./$file
+then
+chmod +x $file
+echo $file создан и исполняемый!
+fi
+

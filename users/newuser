@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#:)
 #проверят или создает user
 read -p 'name -'  user
 if grep $user /etc/passwd

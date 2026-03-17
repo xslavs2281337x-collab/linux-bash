@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+total=$[ $1 + $2 ]
+echo sas $1
+echo sys $2
+echo sas+sys $total

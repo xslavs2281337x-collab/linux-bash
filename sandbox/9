@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+while [ -n  "$1" ]
+do
+case "$1" in
+-a) echo ETO BUKVA AAAAA ;;
+-b) echo ETO BUKVA BBBBBB ;;
+--) shift
+    break ;;
+*) echo $1 что за хуйня?
+
+esac
+shift
+done

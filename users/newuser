@@ -4,7 +4,7 @@ read -p 'name -'  user
 if grep $user /etc/passwd
 then
 echo "hi, good!"
-elif useradd $user -m
+elif useradd -m -s /bin/bash $user
 then
 echo "$user:12345678" | chpasswd
 grep $user /etc/passwd

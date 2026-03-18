@@ -2,9 +2,9 @@
 read -p "name file -" file
 if [ ! -f "$file" ]
 then
-echo "#!/usr/bin/env bash" >>$file
-chmod +x $file
-echo $file создан и исполняемый!
+echo "#!/usr/bin/env bash" >>"$file"
+chmod +x "$file"
+echo "$file" создан и исполняемый!
 else
 echo файл уже создан
 fi

@@ -3,11 +3,15 @@ while [ -n  "$1" ]
 do
 case "$1" in
 -a) echo ETO BUKVA AAAAA ;;
--b) echo ETO BUKVA BBBBBB ;;
+-b) param="$2" ;;
+*) echo "$1 что это ?" ;;
 --) shift
-    break ;;
-*) echo $1 что за хуйня?
-
+    break
 esac
 shift
+done
+for param in "$@"
+do
+echo $param
+
 done

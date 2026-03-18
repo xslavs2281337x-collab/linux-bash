@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+while [ -n "$1" ]
+do
+case "$1" in
+-t) file="$2" 
+shift ;;
+*) echo hehehe ;;
+esac
+shift
+done
+
+if [ -z "$file" ]
+then
+echo нет названия файла
+elif [ ! -f "$file" ]
+then
+echo "#!/usr/bin/env bash" >> "$file"
+chmod +x "$file"
+else echo "$file уже есть"
+fi
+

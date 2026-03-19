@@ -2,7 +2,7 @@
 while [ -n "$1" ]
 do
 case "$1" in
--t) file="$2" 
+-t) file="$2"
 shift ;;
 *) echo hehehe ;;
 esac
@@ -14,7 +14,8 @@ then
 echo нет названия файла
 elif [ ! -f "$file" ]
 then
-echo "#!/usr/bin/env bash" >> "$file"
+mypwd=$(pwd)
+echo "#!/usr/bin/env bash" >> "$mypwd"/"$file"
 chmod +x "$file"
 else echo "$file уже есть"
 fi

@@ -1,14 +1,7 @@
 #!/usr/bin/env bash
-while [ -n "$1" ]
-do
-case "$1" in
--t) file="$2"
-shift ;;
-*) echo hehehe ;;
-esac
-shift
-done
 
+
+function_1() {
 if [ -z "$file" ]
 then
 echo нет названия файла
@@ -19,4 +12,20 @@ echo "#!/usr/bin/env bash" >> "$mypwd"/"$file"
 chmod +x "$file"
 else echo "$file уже есть"
 fi
+}
+
+
+while [ -n "$1" ]
+do
+case "$1" in
+-t)
+file="$2"
+
+shift
+function_1 ;;
+*) echo what? ;;
+esac
+shift
+done
+
 

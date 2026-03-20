@@ -3,7 +3,7 @@
 function_1() {
 if [ -z "$file" ]
 then
-echo нет названия файла
+echo "no file"
 elif [ ! -f "$file" ]
 then
 mypwd=$(pwd)
@@ -22,7 +22,7 @@ file="$2"
 
 shift
 function_1 ;;
-*) echo what? ;;
+*) echo what is flag? ;;
 esac
 shift
 done

@@ -9,7 +9,7 @@ elif [ ! -f "$file" ]
 then
 mypwd=$(pwd)
 echo "#!/usr/bin/env bash" >> "$mypwd"/"$file"
-chmod +x "$file"
+chmod +x "$mypwd"/"$file"
 else echo "$file уже есть"
 fi
 }

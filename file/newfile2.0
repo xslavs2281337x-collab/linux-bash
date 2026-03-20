@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# it is new file
 function_1() {
 if [ -z "$file" ]
 then
@@ -12,6 +13,7 @@ else echo "$file уже есть"
 fi
 }
 
+#main logic
 while [ -n "$1" ]
 do
 case "$1" in

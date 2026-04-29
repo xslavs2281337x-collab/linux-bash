@@ -1,0 +1,1 @@
+FROM mybase:latest

@@ -1,9 +1,9 @@
 services:
-  APP:
-    build: ./APP
+  app:
+    build: ./app
     ports:
       - "5000:5000"
-  CLIENT:
-    build: ./CLIENT
+  client:
+    build: ./client
     depends_on:
-      - APP
+      - app

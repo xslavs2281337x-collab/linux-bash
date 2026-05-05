@@ -1,0 +1,10 @@
+## тест на ограничение памяти для контейнера
+services:
+  memhog:
+    image: alpine:latest
+    command: sh -c "i=0; while true; do dd if=/dev/zero of=/dev/shm/file$i bs=30M count=50 2>&1; i=$((i+1)); sleep 1; done"
+    deploy:
+      resources:
+        limits:
+          memory: 100M
+    restart: "no"

@@ -1,0 +1,9 @@
+services:
+  greeter:
+    build: ./greeter
+    ports:
+      - "7000:7000"
+  caller:
+    build: ./caller
+    depends_on:
+      - greeter

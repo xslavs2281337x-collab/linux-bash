@@ -3,7 +3,16 @@ services:
     build: ./greeter
     ports:
       - "7000:7000"
+    ## добавляем секцию healthcheck для проверки доступности сервиса
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:7000"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 1s
+
   caller:
     build: ./caller
     depends_on:
-      - greeter
+      greeter:  
+        condition: service_healthy

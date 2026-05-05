@@ -1,0 +1,9 @@
+services:
+  printer:
+    image: alpine:latest
+    environment:
+      ## указывает в .env файл, который будет использоваться для загрузки переменных окружения
+      - MY_NAME=${MY_NAME}
+      - MY_AGE=${MY_AGE}
+      - MY_CITY=${MY_CITY}
+    command: sh -c 'echo "My name is $$MY_NAME, I am $$MY_AGE years old and I live in $$MY_CITY."'

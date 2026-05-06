@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
+
 # script for git push to remote repository
 project=$(pwd)
-
 
 if [ -z "$1" ]; then
     echo "please enter commit message"

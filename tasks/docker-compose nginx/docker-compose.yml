@@ -1,0 +1,21 @@
+name: nginx-reverse-proxy
+services:
+  service1:
+    build: ./service1
+  service2:
+    build: ./service2
+  service3:
+    build: ./service3
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./log:/var/log/nginx
+      - ./include:/etc/nginx/proxy.params:ro
+    depends_on:
+      - service1
+      - service2
+      - service3
+    restart: unless-stopped

@@ -19,3 +19,4 @@ services:
       - service2
       - service3
     restart: unless-stopped
+

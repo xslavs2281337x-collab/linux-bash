@@ -1,4 +1,4 @@
 .env
-.gitignore
-.README.md.swp
+*.swp
 db_pass.txt
+.vagrant

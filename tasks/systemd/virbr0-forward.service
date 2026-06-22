@@ -1,0 +1,12 @@
+[Unit]
+Description=Allow virbr0 forwarding past Docker
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/iptables -I DOCKER-USER -i virbr0 -j ACCEPT
+ExecStart=/usr/sbin/iptables -I DOCKER-USER -o virbr0 -j ACCEPT
+
+[Install]
+WantedBy=multi-user.target

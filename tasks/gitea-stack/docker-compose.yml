@@ -28,7 +28,7 @@ services:
       - GITEA__database__NAME=${POSTGRES_DB}
       - GITEA__database__USER=${POSTGRES_USER}
       - GITEA__database__PASSWD=${POSTGRES_PASSWORD}
-      - GITEA__server__ROOT_URL=http://127.0.0.1/git/
+      - GITEA__server__ROOT_URL=${POSTGRES_URL}
     restart: unless-stopped
     volumes:
       - gitea:/data

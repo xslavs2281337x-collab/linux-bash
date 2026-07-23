@@ -1,0 +1,18 @@
+[webservers]
+testserver ansible_host=192.168.122.150
+
+
+[webservers:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=./.vagrant/machines/default/libvirt/private_key
+
+
+
+
+
+
+
+
+
+
+

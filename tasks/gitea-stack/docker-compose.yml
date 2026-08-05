@@ -83,7 +83,8 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./logs/nginx/log:/var/log/nginx
       - ./inclube:/etc/nginx/proxy.params:ro
-      - ./nginx/index.html:/usr/share/nginx/html/hehe/index.html 
+      - ./nginx/index.html:/usr/share/nginx/html/hehe/index.html
+      - ./certs:/etc/nginx/certs:ro
     networks:
       - frontend
     depends_on:

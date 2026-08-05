@@ -1,5 +1,12 @@
 name: gitea-stack
 
+x-defaults: &logs 
+ logging:
+     driver: json-file
+     options:
+      max-size: "10m"
+      max-file: "5"
+
 networks:
   frontend:
     external: false
@@ -46,7 +53,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-        
+    <<: *logs      
   db:
     image: postgres:18.4
     restart: unless-stopped
@@ -66,6 +73,7 @@ services:
       timeout: 3s
       retries: 5
       start_period: 5s
+    <<: *logs
   ngix:
     image: nginx:1.29.8
     ports:
@@ -80,6 +88,6 @@ services:
     depends_on:
       gitea:
         condition: service_healthy
-    
+    <<: *logs
 
       
